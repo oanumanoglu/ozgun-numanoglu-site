@@ -1,30 +1,438 @@
 [
   {
-    "year": 2023,
-    "authors": "Baser, T.; Nawaz, K.; Chung, A.; Faysal, S.; Numanoglu, O.A.",
-    "title": "Ground movement patterns and shallow foundation performance in Iskenderun coastline during the 2023 Kahramanmaraş earthquake sequence",
+    "title": "Experimental and numerical investigation of cyclic response of dense sand under multidirectional shaking",
+    "authors": [
+      "Olson, SM",
+      "Hashash, YMA",
+      "Rutherford, CJ",
+      "Cerna-Diaz, A",
+      "Numanoglu, OA",
+      "Bhaumik, L",
+      "Weaver, T"
+    ],
+    "year": "2015",
+    "venue": "Sixth International Conference on Earthquake Geotechnical Engineering",
+    "link": ""
+  },
+  {
+    "title": "Volumetric strain in non-plastic silty sand subject to multidirectional cyclic loading",
+    "authors": [
+      "Bhaumik, Lopamudra",
+      "Rutherford, Cassandra J",
+      "Cerna-Diaz, Alfonso",
+      "Olson, Scott M",
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA",
+      "Weaver, Thomas"
+    ],
+    "year": "2017",
+    "venue": "Geotechnical Frontiers 2017",
+    "link": ""
+  },
+  {
+    "title": "Nonlinear 3-D modeling of dense sand and the simulation of a soil-structure system under multi-directional loading",
+    "authors": [
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA",
+      "Cerna-Diaz, Alfonso",
+      "Olson, Scott M",
+      "Bhaumik, Lopamudra",
+      "Rutherford, Cassandra J",
+      "Weaver, Thomas"
+    ],
+    "year": "2017",
+    "venue": "Geotechnical Frontiers 2017",
+    "link": ""
+  },
+  {
+    "title": "MASTODON theory manual",
+    "authors": [
+      "Coleman, Justin",
+      "Slaughter, Andrew",
+      "Veeraraghavan, Swetha",
+      "Bolisetti, Chandrakanth",
+      "Numanoglu, Ozgun Alp",
+      "Spears, Robert",
+      "Hoffman, William",
+      "Hurt, Efe"
+    ],
+    "year": "2017",
+    "venue": "",
+    "link": ""
+  },
+  {
+    "title": "Generalized non-Masing hysteresis model for cyclic loading",
+    "authors": [
+      "Numanoglu, Ozgun A",
+      "Musgrove, Michael",
+      "Harmon, Joseph A",
+      "Hashash, Youssef MA"
+    ],
+    "year": "2018",
+    "venue": "Journal of Geotechnical and Geoenvironmental Engineering",
+    "link": ""
+  },
+  {
+    "title": "Non-linear time domain site response and soil structure analyses for nuclear facilities using MASTODON",
+    "authors": [
+      "Baltaji, Omar",
+      "Numanoglu, Ozgun A",
+      "Veeraraghavan, Swetha",
+      "Hashash, YM",
+      "Coleman, Justin L",
+      "Bolisetti, Chandrakanth"
+    ],
+    "year": "2017",
+    "venue": "Proceedings of the 24th Conference on Structural Mechanics in Reactor Technology, Busan, Korea",
+    "link": ""
+  },
+  {
+    "title": "Comparing shear response of dense sands from centrifuge and direct simple shear tests with published correlations",
+    "authors": [
+      "Bhaumik, Lopamudra",
+      "Cerna-Diaz, Alfonso A",
+      "Numanoglu, Ozgun A",
+      "Olson, Scott M",
+      "Rutherford, Cassandra J",
+      "Hashash, Youssef MA",
+      "Weaver, Thomas"
+    ],
+    "year": "2018",
+    "venue": "Geotechnical Earthquake Engineering and Soil Dynamics V",
+    "link": ""
+  },
+  {
+    "title": "Impact of hysteretic damping on nonlinear dynamic soil-underground structure-structure interaction analyses",
+    "authors": [
+      "Basarah, Yuamar I",
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA",
+      "Dashti, Shideh"
+    ],
+    "year": "2019",
+    "venue": "Eighth International Conference on Case Histories in Geotechnical Engineering",
+    "link": ""
+  },
+  {
+    "title": "Numerical Simulation of Dynamic Centrifuge Tests on Concrete Faced Rockfill Dam",
+    "authors": [
+      "Acar, Muhsin",
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA"
+    ],
+    "year": "2019",
+    "venue": "Eighth International Conference on Case Histories in Geotechnical Engineering",
+    "link": ""
+  },
+  {
+    "title": "Free-field cyclic response of dense sands in dynamic centrifuge tests with 1D and 2D shaking",
+    "authors": [
+      "Cerna-Diaz, Alfonso",
+      "Olson, Scott M",
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA",
+      "Bhaumik, Lopamudra",
+      "Rutherford, Cassandra J",
+      "Weaver, Thomas"
+    ],
+    "year": "2017",
+    "venue": "Geotechnical Frontiers 2017",
+    "link": ""
+  },
+  {
+    "title": "Effect of specimen preparation on volumetric behavior of sands under cyclic multidirectional shear",
+    "authors": [
+      "Bhaumik, Lopamudra",
+      "Rutherford, Cassandra J",
+      "Olson, Scott M",
+      "Hashash, Youssef MA",
+      "Cerna-Diaz, Alfonso",
+      "Numanoglu, Ozgun A",
+      "Weaver, Thomas"
+    ],
+    "year": "2020",
+    "venue": "Geotechnical Testing Journal",
+    "link": ""
+  },
+  {
+    "title": "Numerical modeling and simulation of seismic settlements on dense sands",
+    "authors": [
+      "Numanoglu, Ozgun Alp"
+    ],
+    "year": "2019",
+    "venue": "",
+    "link": ""
+  },
+  {
+    "title": "Deep learning-based site amplification models for Central and Eastern North America",
+    "authors": [
+      "Ilhan, Okan",
+      "Harmon, Joseph A",
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA"
+    ],
+    "year": "2019",
+    "venue": "Earthquake Geotechnical Engineering for Protection and Development of Environment and Constructions",
+    "link": ""
+  },
+  {
+    "title": "Numerical simulation of dense sand behavior under multi-directional seismic loading using a new 3-D constitutive model",
+    "authors": [
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA",
+      "Olson, Scott M",
+      "Cerna-Diaz, Alfonso",
+      "Bhaumik, Lopamudra",
+      "Rutherford, Cassandra J",
+      "Weaver, Thomas"
+    ],
+    "year": "2019",
+    "venue": "Earthquake Geotechnical Engineering for Protection and Development of Environment and Constructions",
+    "link": ""
+  },
+  {
+    "title": "Response of sands to multidirectional dynamic loading in centrifuge tests",
+    "authors": [
+      "Cerna-Diaz, Alfonso",
+      "Olson, Scott M",
+      "Hashash, Youssef MA",
+      "Numanoglu, Ozgun A",
+      "Rutherford, Cassandra J",
+      "Bhaumik, Lopamudra",
+      "Weaver, Thomas"
+    ],
+    "year": "2020",
+    "venue": "Journal of Geotechnical and Geoenvironmental Engineering",
+    "link": ""
+  },
+  {
+    "title": "DEEPSOIL 7.0, user manual",
+    "authors": [
+      "Hashash, YMA",
+      "Musgrove, MI",
+      "Harmon, JA",
+      "Ilhan, O",
+      "Xing, G",
+      "Numanoglu, O",
+      "Groholski, DR",
+      "Phillips, CA",
+      "Park, D"
+    ],
+    "year": "2017",
+    "venue": "University of Illinois at Urbana-Champaign",
+    "link": ""
+  },
+  {
+    "title": "Numerical modeling of higher mode effects of adjacent tall buildings on seismic response of a tunnel",
+    "authors": [
+      "Basarah, Yuamar I",
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA"
+    ],
+    "year": "2021",
+    "venue": "IFCEE 2021",
+    "link": ""
+  },
+  {
+    "title": "DEEPSOIL 6.1, User Manual, Urbana, IL, Board of Trustees of University of Illinois at Urbana-Champaign",
+    "authors": [
+      "Hashash, YMA",
+      "Musgrove, MI",
+      "Harmon, JA",
+      "Groholski, DR",
+      "Phillips, CA",
+      "Park, D"
+    ],
+    "year": "2016",
+    "venue": "Eri{\\c{s}}im adresi: http://deepsoil. cee. illinois. edu/Files/DEEPSOIL\\_User\\_Manual\\_v6. pdf",
+    "link": ""
+  },
+  {
+    "title": "Nonlinear and equivalent linear seismic site response of one-dimensional soil columns",
+    "authors": [
+      "Hashash, Youssef MA",
+      "Musgrove, MI",
+      "Harmon, JA"
+    ],
+    "year": "2018",
+    "venue": "User Manual v7. 0, Deepsoil Software",
+    "link": ""
+  },
+  {
+    "title": "DEEPSOIL 7.0, User Manual",
+    "authors": [
+      "Hashash, Y.M.A.",
+      "Musgrove, M.I.",
+      "Harmon, J.A.",
+      "Ilhan, O.",
+      "Xing, G.",
+      "Numanoglu, O.",
+      "Groholski, D.R.",
+      "Phillips, C.A.",
+      "Park, D."
+    ],
+    "year": "2020",
+    "venue": "Urbana, IL, Board of Trustees of University of Illinois at Urbana-Champaign",
+    "link": ""
+  },
+  {
+    "title": "Evaluating Impact of Adjacent Tall Buildings on Seismic Response of Underground Structures",
+    "authors": [
+      "Basarah, Yuamar I",
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA"
+    ],
+    "year": "2022",
+    "venue": "Lifelines 2022",
+    "link": ""
+  },
+  {
+    "title": "A multidirectional cyclic direct simple shear device for characterizing dynamic soil behavior",
+    "authors": [
+      "Bhaumik, Lopamudra",
+      "Rutherford, Cassandra J",
+      "Olson, Scott M",
+      "Hashash, Youssef MA",
+      "Numanoglu, Ozgun A",
+      "Cerna-Diaz, Alfonso A",
+      "Weaver, Thomas"
+    ],
+    "year": "2023",
+    "venue": "Geotechnical Testing Journal",
+    "link": ""
+  },
+  {
+    "title": "A simplified three-dimensional constitutive model for seismic modeling of dense sands",
+    "authors": [
+      "Numanoglu, Ozgun A",
+      "Hashash, Youssef MA",
+      "Olson, Scott M",
+      "Cerna-Diaz, Alfonso",
+      "Rutherford, Cassandra J",
+      "Bhaumik, Lopamudra",
+      "Weaver, Thomas",
+      "others"
+    ],
+    "year": "2023",
+    "venue": "Soil Dynamics and Earthquake Engineering",
+    "link": ""
+  },
+  {
+    "title": "Field reconnaissance and observations from the February 6, 2023, Turkey earthquake sequence",
+    "authors": [
+      "Ozkula, Gulen",
+      "Dowell, Robert K",
+      "Baser, Tugce",
+      "Lin, Jui-Liang",
+      "Numanoglu, Ozgun A",
+      "Ilhan, Okan",
+      "Olgun, C Guney",
+      "Huang, Cheng-Wei",
+      "Uludag, Tunc Deniz"
+    ],
+    "year": "2023",
+    "venue": "Natural Hazards",
+    "link": ""
+  },
+  {
+    "title": "Ground movement patterns and shallow foundation performance in Iskenderun coastline during the 2023 Kahramanmaras earthquake sequence",
+    "authors": [
+      "Baser, Tugce",
+      "Nawaz, Kamran",
+      "Chung, Albert",
+      "Faysal, Seikh",
+      "Numanoglu, Ozgun Alp"
+    ],
+    "year": "2023",
     "venue": "Earthquake Engineering and Engineering Vibration",
-    "link": "https://doi.org/10.1007/s11803-023-2205-9"
+    "link": ""
   },
   {
-    "year": 2024,
-    "authors": "EERI–GEER Joint Reconnaissance Team (incl. Numanoglu, O.A.)",
-    "title": "Türkiye Earthquake Sequence on February 6, 2023 — Reconnaissance Report (Phase 3)",
-    "venue": "EERI & GEER Report",
-    "link": "https://www.geerassociation.org/components/com_geer_reports/geerfiles/Phase%203%20Turkiye%20Earthquake%20Report_v3.pdf"
+    "title": "A Shifting Landscape",
+    "authors": [
+      "Baser, Tugce",
+      "Numanoglu, Ozgun Alp",
+      "Nikolaou, Sissy"
+    ],
+    "year": "2024",
+    "venue": "GeoStrata Magazine Archive",
+    "link": ""
   },
   {
-    "year": 2024,
-    "authors": "Numanoglu, O.A.",
-    "title": "Use of LS‑DYNA for Estimating Earthquake‑induced Ground Settlements",
-    "venue": "International LS‑DYNA User Conference (Agenda entry)",
-    "link": "https://ansys-transportation-summit.vfairs.com/en/agenda-page"
+    "title": "Sensitivity of one-dimensional seismic ground response analyses of marine land reclamation profiles to the consideration of earthquake causal rupture parameters in selection of input ground motions",
+    "authors": [
+      "Dismuke, James",
+      "Moyaert, Kevin",
+      "Numanoglu, Ozgun",
+      "Van Sijpe, Annelies"
+    ],
+    "year": "2024",
+    "venue": "Japanese Geotechnical Society Special Publication",
+    "link": ""
   },
   {
-    "year": 2023,
-    "authors": "Numanoglu, O.A.; co‑authors",
-    "title": "A simplified three‑dimensional constitutive model for seismic modeling of dense sands (I‑soil) – LS‑DYNA implementation",
-    "venue": "Preprint / Working paper",
-    "link": "https://www.researchgate.net/publication/369697819_A_simplified_three-dimensional_constitutive_model_for_seismic_modeling_of_dense_sands"
+    "title": "Performance of Lifelines Subjected to Combined Seismic and Climate Forcings during the 2023 Kahramanmaras Earthquake Sequence",
+    "authors": [
+      "Baser, Tugce",
+      "Numanoglu, Ozgun"
+    ],
+    "year": "2023",
+    "venue": "AGU Fall Meeting Abstracts",
+    "link": ""
+  },
+  {
+    "title": "Numerical Simulation of a Concrete Faced Sandy-Gravel Dam During the February 6th, 2023 Kahramanmaras Earthquakes Sequence",
+    "authors": [
+      "Acar, Muhsin",
+      "Numanoglu, Ozgun A",
+      "Coban, Murat",
+      "Boyraz, Onur",
+      "Tuncer, Kemal"
+    ],
+    "year": "2024",
+    "venue": "International Symposium on Dams and Earthquakes, Athens",
+    "link": ""
+  },
+  {
+    "title": "Seismic Settlement Evaluation of the Nihal Atakas Mosque after the 2023 Kahramanmaras, Turkiye, Earthquakes",
+    "authors": [
+      "Numanoglu, Ozgun",
+      "Pretell, Renmin",
+      "Akkaya, Sevil",
+      "Taukoor, Vashish"
+    ],
+    "year": "2025",
+    "venue": "Geotechnical Frontiers",
+    "link": ""
+  },
+  {
+    "title": "Comparison of Measured and Estimated Seismic Building Settlements in 2023, Kahramanmaras Earthquakes",
+    "authors": [
+      "Numanoglu, Ozgun",
+      "Pretel, Renmin",
+      "Acar, Muhsin",
+      "Erinmez, Serhat",
+      "Baser, Tugce"
+    ],
+    "year": "2024",
+    "venue": "18th World Conference on Earthquake Engineering",
+    "link": ""
+  },
+  {
+    "title": "DEEPSOIL V7. 0, User Manual, Board of Trustees of University of Illinois at Urbana-Champaign",
+    "authors": [
+      "Hashash, YMA",
+      "Musgrove, MI",
+      "Harmon, JA",
+      "Ilhan, O",
+      "Xing, G",
+      "Numanoglu, O",
+      "Groholski, DR",
+      "Phillips, CA",
+      "Park, D"
+    ],
+    "year": "2020",
+    "venue": "Urbana, Illinois, USA",
+    "link": ""
   }
 ]
