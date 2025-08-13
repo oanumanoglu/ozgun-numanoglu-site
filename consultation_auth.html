@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Send an Inquiry – Ozgun Numanoglu</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4;}
+    .container {max-width: 640px; margin: 40px auto; background: #fff; padding: 28px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);}
+    h1 {color: #0c3c60; font-size: 1.6rem; margin: 0 0 6px;}
+    p.helper {color: #555; margin: 0 0 18px; font-size: 0.95rem;}
+    label {display: block; margin-top: 14px; font-weight: 600;}
+    input[type="text"], input[type="email"], textarea {width: 100%; padding: 12px; margin-top: 6px; border: 1px solid #d0d0d0; border-radius: 8px; font-size: 0.95rem;}
+    textarea {resize: vertical; min-height: 160px;}
+    .row {display: grid; grid-template-columns: 1fr 1fr; gap: 12px;}
+    .actions {display: flex; gap: 10px; align-items: center; margin-top: 20px;}
+    button {padding: 12px 18px; background: #f79c42; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;}
+    button[disabled] {opacity: 0.6; cursor: not-allowed;}
+    button:hover {background: #e68a2e;}
+    .note {font-size: 12px; color: #666;}
+    .divider {height: 1px; background: #eee; margin: 18px 0;}
+    .captcha-wrap {margin-top: 16px;}
+    .ok {color: #0c7c3c; font-size: 0.95rem; margin-top: 10px;}
+    .error {color: #b00020; font-size: 0.95rem; margin-top: 10px;}
+  </style>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Send an Inquiry</h1>
+    <p class="helper">Complete the verification and share a short brief. Your email is optional; you’ll receive a confirmation if provided.</p>
+
+    <!-- Replace FORM_ID with your Formspree ID, e.g., https://formspree.io/f/abcxyz -->
+    <form id="consultForm" action="https://formspree.io/f/mldlzjgd" method="POST">
+      <div class="row">
+        <div>
+          <label for="title">Subject/Title</label>
+          <input type="text" id="title" name="title" placeholder="e.g., Site response modeling for Port XYZ" required />
+        </div>
+        <div>
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" />
+        </div>
+      </div>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Briefly describe your project or question…" required></textarea>
+
+      <div class="captcha-wrap">
+        <div class="g-recaptcha" data-sitekey="6LfzjKMrAAAAAHIksUd0M97UD8Le3wEUo7lxXQDg"></div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="submitBtn" disabled>Send</button>
+        <span class="note">The Send button activates after verification.</span>
+      </div>
+
+      <div id="status"></div>
+      <input type="hidden" name="_subject" value="New Consultation Request"/>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" /> <!-- honeypot -->
+    </form>
+
+    <div class="divider"></div>
+    <p class="note">Your email address is never exposed in this page. Submissions are routed via a secure third‑party endpoint.</p>
+  </div>
+
+  <script>
+    const form = document.getElementById('consultForm');
+    const status = document.getElementById('status');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function checkCaptcha() {
+      const resp = grecaptcha.getResponse();
+      submitBtn.disabled = !(resp && resp.length > 0);
+    }
+    setInterval(checkCaptcha, 500);
+
+    form.addEventListener('submit', async (e) => {
+      // Block if captcha not solved
+      if (!grecaptcha.getResponse()) {
+        e.preventDefault();
+        status.className = 'error';
+        status.textContent = 'Please complete the verification.';
+        return;
+      }
+      e.preventDefault();
+      status.className = '';
+      status.textContent = '';
+
+      const action = form.getAttribute('action');
+      if (!action || action.indexOf('FORM_ID') !== -1) {
+        status.className = 'error';
+        status.textContent = 'Form endpoint is not configured yet. Replace FORM_ID with your Formspree ID.';
+        return;
+      }
+
+      try {
+        const data = new FormData(form);
+        const resp = await fetch(action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+
+        if (resp.ok) {
+          status.className = 'ok';
+          status.textContent = 'Thanks! Your message has been sent.';
+          setTimeout(() => { window.location.href = 'thank-you.html'; }, 1500);
+          form.reset();
+          grecaptcha.reset();
+          submitBtn.disabled = true;
+        } else {
+          const result = await resp.json().catch(() => ({}));
+          status.className = 'error';
+          status.textContent = result.error || 'Something went wrong. Please try again later.';
+        }
+      } catch (err) {
+        status.className = 'error';
+        status.textContent = 'Network error. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "year": 2023,
+    "authors": "Baser, T.; Nawaz, K.; Chung, A.; Faysal, S.; Numanoglu, O.A.",
+    "title": "Ground movement patterns and shallow foundation performance in Iskenderun coastline during the 2023 Kahramanmaraş earthquake sequence",
+    "venue": "Earthquake Engineering and Engineering Vibration",
+    "link": "https://doi.org/10.1007/s11803-023-2205-9"
+  },
+  {
+    "year": 2024,
+    "authors": "EERI–GEER Joint Reconnaissance Team (incl. Numanoglu, O.A.)",
+    "title": "Türkiye Earthquake Sequence on February 6, 2023 — Reconnaissance Report (Phase 3)",
+    "venue": "EERI & GEER Report",
+    "link": "https://www.geerassociation.org/components/com_geer_reports/geerfiles/Phase%203%20Turkiye%20Earthquake%20Report_v3.pdf"
+  },
+  {
+    "year": 2024,
+    "authors": "Numanoglu, O.A.",
+    "title": "Use of LS‑DYNA for Estimating Earthquake‑induced Ground Settlements",
+    "venue": "International LS‑DYNA User Conference (Agenda entry)",
+    "link": "https://ansys-transportation-summit.vfairs.com/en/agenda-page"
+  },
+  {
+    "year": 2023,
+    "authors": "Numanoglu, O.A.; co‑authors",
+    "title": "A simplified three‑dimensional constitutive model for seismic modeling of dense sands (I‑soil) – LS‑DYNA implementation",
+    "venue": "Preprint / Working paper",
+    "link": "https://www.researchgate.net/publication/369697819_A_simplified_three-dimensional_constitutive_model_for_seismic_modeling_of_dense_sands"
+  }
+]
