@@ -1,245 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ozgun Numanoglu – Seismic Consulting</title>
-  <style>
-    body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9fafb; color:#111827;}
-    header {background: #0c3c60; color: white; padding: 40px; text-align: center;}
-    header h1 {margin: 0; font-size: 2.5em;}
-    header p {font-size: 1.2em; margin: 10px 0;}
-    nav {position: fixed; top:0; left:0; height:100%; width:220px; background:#0c3c60; color:white; padding-top:60px;}
-    nav a {display:block; padding:12px 20px; color:white; text-decoration:none;}
-    nav a.active {background:#f79c42; color:#0c3c60; font-weight:bold;}
-    main {margin-left:220px; padding:20px;}
-    section {padding:20px; background:white; margin:20px 0; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1);}
-    h2,h3 {color:#0c3c60;}
-    .btn {padding:10px 20px; border:none; cursor:pointer; border-radius:6px;}
-    .btn-primary {background:#0c3c60; color:white;}
-    .btn-secondary {background:white; color:#0c3c60; border:2px solid #0c3c60;}
-    footer {background:#0c3c60; color:white; text-align:center; padding:20px; margin-top:40px;}
-    .pub-pinned-title { margin-top: 10px; font-weight: 700; color:#0c3c60; }
-    .pub-cat { margin-top: 16px; font-weight: 700; color:#0c3c60; }
-    .pub-item { margin: 6px 0; color:#111827; }
-    .pub-venue { color:#6b7280; }
-    .pub-link { margin-left: 6px; font-size: 0.95rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ozgun Numanoglu – Seismic Engineering</title>
+<style>
+  :root {
+    --brand: #0c3c60;
+    --accent: #3b82f6;
+    --ink: #121212;
+    --muted: #6b7280;
+    --bg: #f7f8fb;
+    --card: #ffffff;
+    --line: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.55; }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Layout */
+  .layout { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+  aside { background: #0f2f4a; color: #eef4fa; position: sticky; top: 0; height: 100vh; padding: 28px 22px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand .dot { width: 12px; height: 12px; background: var(--accent); border-radius: 999px; }
+  .brand h1 { margin: 0; font-size: 1.1rem; letter-spacing: 0.2px; }
+  .role { margin-top: 4px; color: #c7d5e5; font-size: 0.88rem; }
+  nav { margin-top: 24px; display:flex; flex-direction: column; gap: 10px; }
+  nav a { color: #e6edf5; padding: 10px 12px; border-radius: 8px; }
+  nav a:hover { background: rgba(255,255,255,0.06); }
+  .cta { margin-top: 18px; display:block; background: var(--accent); color: #0a2440; text-align:center; padding: 10px 12px; border-radius: 10px; font-weight: 600; }
+  .cta:hover { filter: brightness(0.95); text-decoration: none; }
+
+  main { border-left: 1px solid var(--line); background: var(--bg); }
+  .container { max-width: 980px; margin: 0 auto; padding: 28px 28px 60px; }
+  .hero { background: linear-gradient(180deg, #ffffff, #fbfcff); border:1px solid var(--line); border-radius: 16px; padding: 28px; box-shadow: 0 8px 24px rgba(16,24,40,0.04); }
+  .hero h2 { margin: 0; font-size: 1.8rem; color: var(--brand); }
+  .hero p { margin-top: 8px; color: var(--muted); }
+  .hero .actions { margin-top: 14px; display:flex; gap:10px; flex-wrap: wrap; }
+  .btn { display:inline-block; padding: 10px 14px; border-radius: 10px; border:1px solid var(--line); background:#fff; color: var(--ink); font-weight:600; }
+  .btn-primary { background: var(--brand); color:#fff; border-color: var(--brand); }
+  .btn-primary:hover { filter: brightness(0.95); text-decoration: none; }
+  .btn:hover { text-decoration: none; background: #fdfdfd; }
+
+  section.card { margin-top: 28px; background: var(--card); border:1px solid var(--line); border-radius: 16px; padding: 22px 22px; box-shadow: 0 8px 24px rgba(16,24,40,0.04); }
+  section.card h3 { margin-top: 0; color: var(--brand); font-size: 1.3rem; }
+  ul, ol { padding-left: 18px; }
+  .grid { display:grid; gap:18px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+  /* Articles */
+  .articles { display:grid; gap:18px; grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .articles { grid-template-columns: 1fr 1fr; } }
+  .article { background:#fafafa; border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .article h4 { margin:0 0 6px; }
+  .article .date { color: var(--muted); font-size: 0.9rem; }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--line); color: var(--muted); text-align:center; padding: 22px; margin-top: 20px; background: #fff; }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    aside { position: static; height: auto; border-bottom: 1px solid var(--line); }
+    main { border-left: none; }
+  }
+
+  nav a.active { background: rgba(255,255,255,0.14); }
+  .date-badge { display:inline-block; padding:4px 10px; border-radius:999px; background:#e7f0fe; color:#1e40af; font-size:12px; font-weight:600; }
+  .article-thumb { width:100%; height:150px; border-radius:10px; background:#e5e7eb; object-fit:cover; display:block; }
+  .article-meta { display:flex; justify-content:space-between; align-items:center; margin:8px 0 6px; color:#6b7280; font-size:0.9rem; }
+  .article h4 { margin: 0; color:#0c3c60; font-size:1.05rem; }
+
+  .pub-list { margin-top: 10px; }
+  .pub-year { margin-top: 16px; font-weight: 700; color:#0c3c60; }
+  .pub-item { margin: 6px 0; color:#111827; }
+  .pub-venue { color:#6b7280; }
+  .pub-link { margin-left: 6px; font-size: 0.95rem; }
+  .note { color:#6b7280; font-size: 0.95rem; }
+</style>
+
+
 </head>
 <body>
-  <nav>
-    <a href="#perspective">Perspective</a>
-    <a href="#capabilities">Capabilities</a>
-    <a href="#insights">Insights</a>
-    <a href="#snapshot">Career Snapshot</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<div class="layout">
+  <aside>
+    <div class="brand">
+      <div class="dot"></div>
+      <h1>Ozgun A. Numanoglu</h1>
+    </div>
+    <div class="role">Geotechnical & Earthquake Engineering</div>
+    <nav>
+      <a href="#top">Overview</a>
+      <a href="#perspective">Perspective</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#insights">Insights</a>
+      <a href="#publications">Publications</a>
+      <a href="#snapshot">Career Snapshot</a>
+      <a href="#contact">Get in Touch</a>
+    </nav>
+    <a class="cta" href="consultation_auth.html" target="_blank">Send an Inquiry</a>
+  </aside>
 
-  <main>
-    <header>
-      <h1>Advanced Seismic Geotechnical Modeling & Research Perspective</h1>
-      <p>Exploring seismic site response, soil–structure interaction, and lessons from earthquakes worldwide.</p>
-      <button class="btn btn-primary">Get in Touch</button>
-      <button class="btn btn-secondary">Explore Work</button>
-    </header>
-
-    <section class="card" id="perspective">
-      <h3>Perspective</h3>
-      <ul>
-        <li>Complex seismic modeling for infrastructure and energy projects</li>
-        <li>Practical application of LS-DYNA, PLAXIS, DEEPSOIL/RSSeismic</li>
-        <li>Bridging field observations with analysis to inform decisions</li>
-        <li>Collaborative problem‑solving from early design through post‑event review</li>
-      </ul>
-    </section>
-
-    <section class="card" id="capabilities">
-      <h3>Focus Areas</h3>
-      <div>
-        <div><h4>Seismic Modeling & Analysis</h4><p>Advanced LS-DYNA simulations using constitutive soil models for infrastructure.</p></div>
-        <div><h4>Training & Knowledge Sharing</h4><p>Workshops and guidance on seismic analysis tools and interpretation.</p></div>
-        <div><h4>Post-Event Studies</h4><p>From reconnaissance to forensic-style evaluations, linking observations to modeling.</p></div>
+  <main id="top">
+    <div class="container">
+      <div class="hero">
+        <h2>Advanced Seismic Geotechnical Modeling & Technical Perspective</h2>
+        <p>Communicating methods, observations, and lessons learned in geotechnical and earthquake engineering. Notes on modeling, post‑event analysis, and training — with a focus on practical value to project teams.</p>
+        <div class="actions">
+          <a class="btn-primary btn" href="#insights">Read Insights</a>
+          <a class="btn" href="consultation_auth.html" target="_blank">Start a Conversation</a>
+        </div>
       </div>
-    </section>
 
-    <section class="card" id="insights">
-      <h3>Insights</h3>
-      <div>
-        <article>
-          <img src="images/kahramanmaras.jpg" alt="Kahramanmaras damage" style="width:100%;max-width:300px;border-radius:8px;">
-          <h4><a href="articles/seismic-lessons-kahramanmaras.html">Seismic Lessons from Kahramanmaras</a></h4>
-          <p class="date">Feb 2023</p>
-        </article>
-        <article>
-          <img src="images/site-response-cartoon.png" alt="Site response cartoon" style="width:100%;max-width:300px;border-radius:8px;">
-          <h4><a href="articles/seismic-site-response.html">Understanding Seismic Site Response</a></h4>
-          <p class="date">Jan 2023</p>
-        </article>
-      </div>
-    </section>
+      <section class="card" id="perspective">
+        <h3>Perspective</h3>
+        <p>I approach geotechnical and earthquake engineering with an emphasis on:</p>
+<ul>
+<li>Applying advanced numerical modeling to better understand the seismic performance of infrastructure and energy facilities.</li>
+<li>Integrating tools such as LS-DYNA, PLAXIS, and DEEPSOIL (now RSSeismic) into practical project workflows in a fast and efficient manner while preserving the technical depth.</li>
+<li>Linking field observations with analytical models to develop evidence-based conclusions.</li>
+<li>Engaging in collaborative problem-solving from early project stages through post-event investigations.</li>
+</ul>
+<p>while keeping the fundamentals of soil mechanics and observational methods a top priority</p>
+      </section>
 
-    <section class="card" id="snapshot">
-      <h3>Career Snapshot</h3>
-      <p>Geotechnical and earthquake engineering professional focusing on seismic site response, advanced numerical modeling, and post‑event analysis.</p>
-      <ul>
-        <li><strong>Current focus:</strong> Seismic analysis and modeling; linking field evidence to analytical conclusions</li>
-        <li><strong>Experience highlights:</strong> Contributions to constitutive modeling in LS‑DYNA; reconnaissance and post‑event simulations</li>
-        <li><strong>Recognition:</strong> ASTM Hogentogler Award (2024)</li>
-        <li><strong>Tools:</strong> LS‑DYNA, PLAXIS, DEEPSOIL/RSSeismic, MASTODON</li>
-        <li><strong>Education:</strong> Ph.D. in Civil Engineering (Geotechnical); M.S. in Geotechnical Engineering</li>
-      </ul>
-      <p class="note">For a full CV, <a href="consultation_auth.html" target="_blank">send an inquiry</a>.</p>
-    </section>
+      <section class="card" id="capabilities">
+        <h3>Capabilities</h3>
+        <p>Content will be added here.</p>
+      </section>
 
-    <section class="card" id="publications">
-      <h3>Publications</h3>
-      <div id="pub-pinned" class="pub-list"></div>
-      <div id="pub-list" class="pub-list"></div>
-      <div id="pub-fallback" class="note" style="display:none;">Unable to load publications here. Please see Google Scholar.</div>
-      <div class="actions"><button id="toggleAll" class="btn">Show all</button></div>
-    </section>
+      <section class="card" id="insights">
+        <h3>Insights</h3>
 
-    <section class="card" id="contact">
-      <h3>Contact</h3>
-      <p>For inquiries, collaborations, or speaking engagements, please reach out.</p>
-      <form action="https://formspree.io/f/mldlzjgd" method="POST">
-        <label>Your Name <input type="text" name="name" required></label><br>
-        <label>Your Email <input type="email" name="_replyto" required></label><br>
-        <label>Message <textarea name="message" required></textarea></label><br>
-        <button class="btn btn-primary" type="submit">Send Message</button>
-      </form>
-    </section>
+        <div class="articles">
+          <article class="article">
+            <img class="article-thumb" src="images/insight-kahramanmaras.jpg" alt="Post‑event seismic observations and modeling" />
+            <div class="article-meta">
+              <span class="date-badge">Feb 10, 2025</span>
+              <span>~4 min read</span>
+            </div>
+            <h4><a href="articles/seismic-lessons-kahramanmaras.html">Seismic Modeling Lessons from the 2023 Kahramanmaraş Earthquake</a></h4>
+            <p>Post-event modeling approaches, observations that matter, and implications for infrastructure performance.</p>
+          </article>
+          <article class="article">
+            <img class="article-thumb" src="images/insight-site-response.jpg" alt="Seismic site response schematic" />
+            <div class="article-meta">
+              <span class="date-badge">Jan 22, 2025</span>
+              <span>~3 min read</span>
+            </div>
+            <h4><a href="articles/site-response-benchmarking.html">Site Response Benchmarking: Practical Considerations</a></h4>
+            <p>Aligning field measurements and analysis outputs, and keeping workflows reproducible without losing technical depth.</p>
+          </article>
+        </div>
+        <p><em>Monthly updates planned. Longer writeups and media links can be added here.</em></p>
+    
+</section>
 
-    <footer><p>&copy; 2025 Ozgun Numanoglu – All rights reserved.</p></footer>
+      \1
+<p>Geotechnical and earthquake engineering professional focusing on seismic site response, advanced numerical modeling, and post‑event analysis. Work spans research and practice with an emphasis on translating observations into actionable engineering insight.</p>
+<ul>
+  <li><strong>Current focus:</strong> Seismic analysis and modeling; linking field evidence to analytical conclusions</li>
+  <li><strong>Experience highlights:</strong> Contributions to constitutive modeling in LS‑DYNA; reconnaissance and post‑event simulations; support for infrastructure and energy projects</li>
+  <li><strong>Recognition:</strong> ASTM Hogentogler Award (2024)</li>
+  <li><strong>Tools:</strong> LS‑DYNA, PLAXIS, DEEPSOIL/RSSeismic, MASTODON</li>
+  <li><strong>Education:</strong> Ph.D. in Civil Engineering (Geotechnical); M.S. in Geotechnical Engineering</li>
+</ul>
+<p class="note">For a full CV or additional details, <a href="consultation_auth.html" target="_blank">send an inquiry</a>.</p>
+\3
+
+      
+      <section class="card" id="publications">
+        <h3>Publications</h3>
+        <p class="note">Selected publications presented in a compact list. A complete list is available on <a href="https://scholar.google.com/citations?user=QUJS59AAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>.</p>
+        <div id="pub-list" class="pub-list"></div>
+        
+        <div id="pub-embedded" style="display:none;">
+          <div class="pub-year">2024</div>
+          <div class="pub-item">EERI–GEER Joint Reconnaissance Team (incl. Numanoglu, O.A.) (2024). <em>Türkiye Earthquake Sequence on February 6, 2023 — Reconnaissance Report (Phase 3)</em> <span class="pub-venue">· EERI & GEER Report</span> <a class="pub-link" target="_blank" href="https://www.geerassociation.org/components/com_geer_reports/geerfiles/Phase%203%20Turkiye%20Earthquake%20Report_v3.pdf">link</a></div>
+          <div class="pub-item">Numanoglu, O.A. (2024). <em>Use of LS‑DYNA for Estimating Earthquake‑induced Ground Settlements</em> <span class="pub-venue">· International LS‑DYNA User Conference</span></div>
+          <div class="pub-year">2023</div>
+          <div class="pub-item">Baser, T.; Nawaz, K.; Chung, A.; Faysal, S.; <strong>Numanoglu, O.A.</strong> (2023). <em>Ground movement patterns and shallow foundation performance in Iskenderun coastline during the 2023 Kahramanmaraş earthquake sequence</em> <span class="pub-venue">· Earthquake Engineering and Engineering Vibration</span> <a class="pub-link" target="_blank" href="https://doi.org/10.1007/s11803-023-2205-9">doi</a></div>
+          <div class="pub-item">Numanoglu, O.A.; co‑authors (2023). <em>A simplified three‑dimensional constitutive model for seismic modeling of dense sands (I‑soil) – LS‑DYNA implementation</em> <span class="pub-venue">· Preprint / Working paper</span></div>
+        </div>
+        
+        <div id="pub-fallback" class="note" style="display:none;">Unable to load the publication list here. Please see the Google Scholar link above.</div>
+        <div class="actions" style="margin-top:10px;">
+          <button id="toggleAll" class="btn">Show all</button>
+        </div>
+      </section>
+
+
+      <section class="card" id="contact">
+        <h3>Get in Touch</h3>
+        <p>Let’s discuss how advanced geotechnical modeling can save you time, money, and risk.</p>
+<a href="consultation_auth.html" target="_blank"><button class="primary">Get in Touch with Me</button></a>
+      </section>
+
+      <footer>
+        © 2025 Ozgun Numanoglu — All rights reserved.
+      </footer>
+    </div>
   </main>
-
-
+</div>
 
 <script>
-// Scroll spy
-const sections = ['perspective','capabilities','insights','snapshot','publications','contact'];
-const navLinks = document.querySelectorAll('nav a');
-window.addEventListener('scroll', () => {
-  let current='';
-  sections.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-80){current=id;}});
-  navLinks.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+current){a.classList.add('active');}});
-});
+  // Simple scroll-spy using IntersectionObserver
+  (function() {
+    const sections = ['perspective','capabilities','insights','snapshot','contact'];
+    const links = {};
+    document.querySelectorAll('aside nav a').forEach(a => {
+      const hash = (a.getAttribute('href') || '').replace('#','');
+      if (sections.includes(hash)) links[hash] = a;
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          if (links[id]) {
+            Object.values(links).forEach(l => l.classList.remove('active'));
+            links[id].classList.add('active');
+          }
+        }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  })();
 </script>
 
 
-
-
-
 <script>
-(function(){
-  const pinnedQueries = [
-    "deepsoil 7.0, user manual",
-    "field reconnaissance and observations from the feb 6, 2023 türkiye earthquake sequence",
-    "a simplified three-dimensional constitutive model for seismic modeling of dense sands",
-    "generalized non-masing hysteresis model for cyclic loading",
-    "mastodon theory manual"
-  ];
+  (function(){
+    const container = document.getElementById('pub-list');
+    const fallback = document.getElementById('pub-fallback');
+    const embedded = document.getElementById('pub-embedded');
+    const toggleBtn = document.getElementById('toggleAll');
+    let showingAll = false;
+    let allPubs = [];
 
-  const pinnedEl = document.getElementById('pub-pinned');
-  const listEl = document.getElementById('pub-list');
-  const fallback = document.getElementById('pub-fallback');
-  const toggleBtn = document.getElementById('toggleAll');
-  const embeddedTag = document.getElementById('pub-embedded-data');
+    function groupByYear(items){
+      const map = {};
+      items.forEach(p => {
+        const y = p.year || '—';
+        map[y] = map[y] || [];
+        map[y].push(p);
+      });
+      // Sort years descending
+      const years = Object.keys(map).sort((a,b)=> (b+'').localeCompare(a+''));
+      return years.map(y => ({year:y, items: map[y]}));
+    }
 
-  if (!listEl || !toggleBtn) return;
+    function render(items){
+      const grouped = groupByYear(items);
+      container.innerHTML = grouped.map(group => {
+        const rows = group.items.map(p => {
+          const authors = p.authors || '';
+          const title = p.title || '';
+          const venue = p.venue ? `<span class="pub-venue"> · ${p.venue}</span>` : '';
+          const link = p.link ? `<a class="pub-link" href="${p.link}" target="_blank">link</a>` : '';
+          return `<div class="pub-item">${authors} (${p.year}). <em>${title}</em>${venue}${link}</div>`;
+        }).join('');
+        return `<div><div class="pub-year">${group.year}</div>${rows}</div>`;
+      }).join('');
+    }
 
-  let showingAll = false;
-  let allPubs = [];
-
-  function normAuthors(a){
-    if (Array.isArray(a)) return a.join(', ');
-    return (a || '').replace(/\\s*;\\s*/g, ', ');
-  }
-  function norm(s){
-    return (s || '').toLowerCase().replace(/[^a-z0-9\\s]/g,'').replace(/\\s+/g,' ').trim();
-  }
-  function catOf(p){
-    const v = (p.venue || '').toLowerCase();
-    const t = (p.title || '').toLowerCase();
-    const practiceKeys = ["manual","report","user conference","theory manual","reconnaissance","association","guideline","workshop"];
-    return practiceKeys.some(k => v.includes(k) || t.includes(k)) ? "Practice & Tools" : "Research & Journal Papers";
-  }
-  function groupByYear(items){
-    const map = {};
-    items.forEach(p => {
-      const y = p.year || '—';
-      (map[y] = map[y] || []).push(p);
-    });
-    return Object.keys(map).sort((a,b)=>(b+'').localeCompare(a+'')).map(y => ({year:y, items: map[y]}));
-  }
-  function renderItems(items){
-    return items.map(p=>{
-      const authors = normAuthors(p.authors);
-      const venue = p.venue ? `<span class="pub-venue"> · ${p.venue}</span>` : '';
-      const link = p.link ? `<a class="pub-link" href="${p.link}" target="_blank" rel="noopener">link</a>` : '';
-      return `<div class="pub-item">${authors} (${p.year}). <em>${p.title}</em>${venue}${link}</div>`;
-    }).join('');
-  }
-  function pickPinned(data){
-    const byTitle = {};
-    data.forEach(p => { byTitle[norm(p.title)] = p; });
-    const pins = [];
-    pinnedQueries.forEach(q => {
-      // fuzzy: if exact norm match not found, find any title that contains the query
-      const nq = norm(q);
-      let hit = byTitle[nq];
-      if (!hit){
-        hit = data.find(p => norm(p.title).includes(nq));
-      }
-      if (hit && !pins.includes(hit)) pins.push(hit);
-    });
-    return pins;
-  }
-  function renderPinned(data){
-    if (!pinnedEl) return;
-    const pinned = pickPinned(data);
-    pinnedEl.innerHTML = pinned.length ? `<div class="pub-pinned-title">Selected (pinned)</div>` + renderItems(pinned) : "";
-  }
-  function renderAll(data){
-    const groups = {"Practice & Tools": [], "Research & Journal Papers": []};
-    data.forEach(p => groups[catOf(p)].push(p));
-    const renderCat = (label, items) => {
-      const byYear = groupByYear(items);
-      const block = byYear.map(g => `<div><div class="pub-year">${g.year}</div>${renderItems(g.items)}</div>`).join('');
-      return `<div class="pub-cat">${label}</div>${block}`;
-    };
-    listEl.innerHTML = renderCat("Practice & Tools", groups["Practice & Tools"]) +
-                       renderCat("Research & Journal Papers", groups["Research & Journal Papers"]);
-  }
-  function renderInitial(){
-    listEl.innerHTML = "";
-    toggleBtn.textContent = "Show all";
-  }
-  function runWith(data){
-    allPubs = Array.isArray(data) ? data : [];
-    renderPinned(allPubs);
-    renderInitial();
-    toggleBtn.onclick = () => {
-      showingAll = !showingAll;
-      if (showingAll){ renderAll(allPubs); toggleBtn.textContent = 'Collapse'; }
-      else { renderInitial(); }
-    };
-  }
-
-  // Try fetch first
-  fetch('publications/publications.json', {cache:'no-store'})
-    .then(r=>r.ok ? r.json() : Promise.reject())
-    .then(runWith)
-    .catch(()=>{
-      // Fallback to embedded JSON
-      if (embeddedTag && embeddedTag.textContent.trim()){
-        try { runWith(JSON.parse(embeddedTag.textContent)); return; } catch(e){}
-      }
-      if (fallback) fallback.style.display = 'block';
-      toggleBtn.style.display = 'none';
-    });
-})();
+    fetch('publications/publications.json', {cache:'no-store'})
+      .then(r => r.json())
+      .then(data => {
+        allPubs = Array.isArray(data) ? data : [];
+        const initial = allPubs.slice(0, 6); // understated: show a few by default
+        render(initial);
+        toggleBtn.addEventListener('click', () => {
+          showingAll = !showingAll;
+          render(showingAll ? allPubs : initial);
+          toggleBtn.textContent = showingAll ? 'Collapse' : 'Show all';
+        });
+      })
+      .catch(() => {
+        // Show embedded HTML fallback locally or if JSON can't be fetched
+        if (embedded) embedded.style.display = 'block';
+        if (fallback) fallback.style.display = 'block';
+        // Hide dynamic list and toggle when using embedded
+        const pubList = document.getElementById('pub-list');
+        if (pubList) pubList.style.display = 'none';
+        if (toggleBtn) toggleBtn.style.display = 'none';
+      });
+  })();
 </script>
 
 </body>
