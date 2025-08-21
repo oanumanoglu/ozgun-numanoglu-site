@@ -236,6 +236,7 @@
 </script>
 
 
+
 <script>
   (function(){
     const container = document.getElementById('pub-list');
@@ -245,6 +246,19 @@
     let showingAll = false;
     let allPubs = [];
 
+    // Titles to pin (in this order)
+    const pinnedTitles = [
+      "Generalized non-Masing hysteresis model for cyclic loading",
+      "A simplified three-dimensional constitutive model for seismic modeling of dense sands",
+      "DEEPSOIL V7. 0, User Manual, Board of Trustees of University of Illinois at Urbana-Champaign",
+      "Comparison of Measured and Estimated Seismic Building Settlements in 2023, Kahramanmaras Earthquakes",
+      "Numerical Simulation of a Concrete Faced Sandy-Gravel Dam During the February 6th, 2023 Kahramanmaras Earthquakes Sequence"
+    ];
+
+    function norm(s){
+      return (s||"").toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+    }
+
     function groupByYear(items){
       const map = {};
       items.forEach(p => {
@@ -252,7 +266,6 @@
         map[y] = map[y] || [];
         map[y].push(p);
       });
-      // Sort years descending
       const years = Object.keys(map).sort((a,b)=> (b+'').localeCompare(a+''));
       return years.map(y => ({year:y, items: map[y]}));
     }
@@ -275,25 +288,38 @@
       .then(r => r.json())
       .then(data => {
         allPubs = Array.isArray(data) ? data : [];
-        const initial = allPubs.slice(0, 6); // understated: show a few by default
+        // Build pinned (ordered) and rest
+        const indexByTitle = {};
+        allPubs.forEach(p => indexByTitle[norm(p.title)] = p);
+        const pinned = [];
+        pinnedTitles.forEach(t => {
+          const hit = indexByTitle[norm(t)];
+          if (hit && !pinned.includes(hit)) pinned.push(hit);
+        });
+        const pinnedSet = new Set(pinned.map(p => p.title));
+        const rest = allPubs.filter(p => !pinnedSet.has(p.title));
+
+        // Initial view: show only the 5 pinned items (as requested)
+        const initial = pinned;
         render(initial);
+
+        // Toggle: show everything with pinned first
         toggleBtn.addEventListener('click', () => {
           showingAll = !showingAll;
-          render(showingAll ? allPubs : initial);
+          render(showingAll ? [...pinned, ...rest] : initial);
           toggleBtn.textContent = showingAll ? 'Collapse' : 'Show all';
         });
       })
       .catch(() => {
-        // Show embedded HTML fallback locally or if JSON can't be fetched
         if (embedded) embedded.style.display = 'block';
         if (fallback) fallback.style.display = 'block';
-        // Hide dynamic list and toggle when using embedded
         const pubList = document.getElementById('pub-list');
         if (pubList) pubList.style.display = 'none';
         if (toggleBtn) toggleBtn.style.display = 'none';
       });
   })();
 </script>
+
 
 </body>
 </html>
